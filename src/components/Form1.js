@@ -19,9 +19,9 @@ export default function Form() {
     terms,
   };
 
-  //function for handling the form submission
+  // function for handling the form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // to avoid page refresh after submit.
+    e.preventDefault();
     try {
       const { post, error } = await createPost(formSubmission);
       if (error) throw error;
@@ -30,7 +30,7 @@ export default function Form() {
       console.error(err);
     }
 
-    //For uncontrollod components (try using these inside the createPost()'s object above, on line 14, like so: {name: e.target.elements.name.value}):
+    // For uncontrolled components (try using these inside the createPost()'s object above, on line 14, like so: {name: e.target.elements.name.value}):
     // console.log(e.target.elements);
     // console.log(e.target.elements.name.value);
     // console.log(e.target.elements.age.value);
